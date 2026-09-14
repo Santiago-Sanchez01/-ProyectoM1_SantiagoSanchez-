@@ -1,0 +1,175 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*variables de colores*/
+:root {
+    /*colores fondos*/
+    --fondo-principal: #000000;
+    --fondo-secundario: #320f20;
+
+    /*colores textos*/
+    --texto-principal: #ffc8cc;
+
+    /*color elementos*/
+    --tarjeta-fondo: #7c7578;
+    --color-boton: #ffc8cc;
+
+    /* Bordes */
+    --borde: #ffc8cc;
+}
+
+
+
+       /*html*/
+html {
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+}
+
+/*body*/
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom,#320f20,#c47277 );
+
+    color: var(--texto-principal);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*header*/
+
+header{
+    max-width: 1200px;   
+    margin: 0 auto;
+    padding: 15px ;
+    
+    text-align: center;
+
+    background-image: linear-gradient(to bottom, #111111,#2c2323);
+  
+}
+
+header h1{
+    font-size: 48px;
+    margin-bottom: 7px;
+}
+
+header p{
+    font-size: 20px;
+    color: var(--color-boton);
+}
+
+/*main*/
+main{
+    text-align: center;
+    width: min(1200px, 90%);
+    margin: 2rem auto;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+/*sections*/
+section{
+    background: var(--fondo-secundario);
+    border: 1px solid var(--texto-principal);
+    border-radius: 16px; 
+    padding: 30px;
+    margin-bottom: 25px; 
+    }
+
+section h2,h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    }
+    
+/*select*/
+    select{
+  display: block;
+
+  width: 100%;
+  max-width: 300px;
+
+  padding: 12px 15px;
+  margin: 20px auto;
+
+  background-color: var(--tarjeta-fondo);
+  color: var(--texto-principal);
+
+  border: 2px solid #000000;
+  border-radius:10px;
+  font-size: 16px;
+
+    }
+
+
+    /*button*/
+button {
+    padding: 14px 24px;
+    
+    background-color: var(--tarjeta-fondo);
+
+    Border:none;
+    border:8px;
+
+	font-size: 16px;
+    font-weight: bold;
+    font: inherit;
+
+	cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.85;
+}
+
+
+/*focus*/
+button:focus-visible,
+select:focus-visible{
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+
+/* Paleta de colores*/
+
+#paleta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.color-card {
+    min-height: 180px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+}
+
+/*footer*/
+
+footer{
+  max-width: 1200px;
+
+  margin: 40px auto 0;
+  padding: 30px  20px;
+
+  text-align: center;
+
+  background-color: var(--fondo-principal);
+  color:var(--texto-principal);
+}
