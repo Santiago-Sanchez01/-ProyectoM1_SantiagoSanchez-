@@ -1,256 +1,712 @@
-/* CSS reset */
+/* ========================================
+   CSS RESET
+======================================== */
+
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
-/*variables de colores*/
+/* ========================================
+   VARIABLES
+======================================== */
+
 :root {
-    /*colores fondos*/
-    --fondo-principal: #000000;
-    --fondo-secundario: #320f20;
 
-    /*colores textos*/
-    --texto-principal: #ffc8cc;
+    /* Fondos */
 
-    /*color elementos*/
-    --tarjeta-fondo: #7c7578;
-    --color-boton: #ffc8cc;
+    --fondo-principal: #090708;
+    --fondo-secundario: #24101b;
+    --fondo-panel: rgba(38, 15, 27, 0.88);
+
+    /* Textos */
+
+    --texto-principal: #fff0f2;
+    --texto-secundario: #d9aeb5;
+
+    /* Acentos */
+
+    --color-acento: #ffc8cc;
+    --color-acento-hover: #ffe0e3;
+
+    /* Botones */
+
+    --boton-secundario: #5f5559;
 
     /* Bordes */
-    --borde: #ffc8cc;
+
+    --borde: rgba(255, 200, 204, 0.45);
+    --borde-suave: rgba(255, 255, 255, 0.10);
+
+    /* Sombras */
+
+    --sombra-panel: 0 20px 50px rgba(0, 0, 0, 0.30);
 }
 
 
+/* ========================================
+   HTML
+======================================== */
 
-       /*html*/
 html {
-	line-height: 1.5;
-	-webkit-text-size-adjust: 100%;
+
+    line-height: 1.5;
+
+    -webkit-text-size-adjust: 100%;
+
+    scroll-behavior: smooth;
 }
 
-/*body*/
+
+/* ========================================
+   BODY
+======================================== */
+
 body {
+
     min-height: 100vh;
-    background-image: linear-gradient(to bottom,#320f20,#c47277 );
+
+    background:
+        radial-gradient(
+            circle at top,
+            #542238 0%,
+            #24101b 35%,
+            #090708 100%
+        );
 
     color: var(--texto-principal);
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
-/*header*/
 
-header{
-    max-width: 1200px;   
-    margin: 0 auto;
-    padding: 15px ;
-    
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+
+    width: 100%;
+
+    padding: 45px 20px 35px;
+
     text-align: center;
 
-    background-image: linear-gradient(to bottom, #111111,#2c2323);
-  
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 7, 8, 0.95),
+            rgba(35, 15, 26, 0.75)
+        );
+
+    border-bottom: 1px solid var(--borde-suave);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
 }
 
-header h1{
-    font-size: 48px;
-    margin-bottom: 7px;
+
+header h1 {
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
 }
 
-header p{
-    font-size: 20px;
-    color: var(--color-boton);
+
+header p {
+
+    font-size: 18px;
+
+    color: var(--texto-secundario);
+
+    letter-spacing: 0.3px;
 }
 
-/*main*/
-main{
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+
+    width: min(1200px, 92%);
+
+    margin: 40px auto;
+
+    flex: 1;
+
     text-align: center;
-    width: min(1200px, 90%);
-    margin: 2rem auto;
-    
-    font-family: Arial, Helvetica, sans-serif;
-    
 }
-/*sections*/
-section{
-    background: var(--fondo-secundario);
-    border: 1px solid var(--texto-principal);
-    border-radius: 16px; 
-    padding: 30px;
-    margin-bottom: 25px; 
-    }
+
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+section {
+
+    background: var(--fondo-panel);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    margin-bottom: 28px;
+
+    box-shadow: var(--sombra-panel);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+}
+
 
 section h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    }
-    
-/*select*/
-    select{
-  display: block;
 
-  width: 100%;
-  max-width: 300px;
+    margin-bottom: 28px;
 
-  padding: 12px 15px;
-  margin: 20px auto;
+    font-size: 25px;
 
-  background-color: var(--tarjeta-fondo);
-  color: var(--texto-principal);
+    font-weight: 700;
 
-  border: 2px solid #000000;
-  border-radius:10px;
-  font-size: 16px;
-
-    }
+    letter-spacing: -0.3px;
+}
 
 
-    /*button*/
-button {
-    padding: 14px 24px;
-    
-    background-color: var(--tarjeta-fondo);
+/* ========================================
+   LABELS
+======================================== */
+
+label {
+
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--texto-secundario);
+}
+
+
+/* ========================================
+   SELECT
+======================================== */
+
+select {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 340px;
+
+    margin: 0 auto 18px;
+
+    padding: 13px 16px;
+
+    background-color: #4e464a;
+
     color: var(--texto-principal);
-    border:none;
 
-	font-size: 16px;
-    font-weight: bold;
-    font: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 
-	cursor: pointer;
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-button:hover{
-    opacity: 0.85;
+
+select:hover {
+
+    background-color: #5b5156;
+
 }
 
 
-/*focus*/
-button:focus-visible,
-select:focus-visible{
+select:focus-visible {
+
     outline: 3px solid #ffffff;
+
+    outline-offset: 3px;
+
+    border-color: var(--color-acento);
+
+}
+
+
+/* ========================================
+   ACCIONES
+======================================== */
+
+.acciones {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* ========================================
+   BOTONES GENERALES
+======================================== */
+
+button {
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 13px 20px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+}
+
+
+button:active {
+
+    transform: translateY(0);
+}
+
+
+button:focus-visible {
+
+    outline: 3px solid #ffffff;
+
     outline-offset: 3px;
 }
 
 
-/* Paleta de colores*/
-
-#paleta {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.color-card {
-    min-height: 150px;
-    padding: 20px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    gap: 12px;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    text-shadow: 0 1px 3px #000000;
-
-    animation: aparecer 0.4s ease-out;
-}
+/* ========================================
+   BOTÓN PRINCIPAL
+======================================== */
 
 #generar {
-    padding: 14px 24px;
-    background-color: var(--tarjeta-fondo);
-    color: var(--texto-principal);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+
+    background-color: var(--color-acento);
+
+    color: #24101b;
+
+    padding: 14px 25px;
+
+    box-shadow:
+        0 8px 20px rgba(255, 200, 204, 0.18);
 }
+
+
+#generar:hover {
+
+    background-color: var(--color-acento-hover);
+
+    box-shadow:
+        0 10px 25px rgba(255, 200, 204, 0.28);
+}
+
+
+/* ========================================
+   BOTONES GUARDAR / CARGAR
+======================================== */
+
+#guardar,
+#cargar {
+
+    background-color: var(--boton-secundario);
+
+    color: var(--texto-principal);
+}
+
+
+#guardar:hover,
+#cargar:hover {
+
+    background-color: #70656a;
+}
+
+
+/* ========================================
+   PALETA
+======================================== */
+
+#paleta {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-top: 10px;
+}
+
+
+/* ========================================
+   TARJETAS DE COLOR
+======================================== */
+
+.color-card {
+
+    min-height: 190px;
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 11px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.7);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 10px 25px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+
+    animation: aparecer 0.4s ease-out;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.color-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+        0 15px 30px rgba(0, 0, 0, 0.28);
+}
+
+
+/* ========================================
+   CÓDIGO DEL COLOR
+======================================== */
+
+.codigo-color {
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 2px;
+}
+
+
+/* ========================================
+   BOTONES DENTRO DE LAS TARJETAS
+======================================== */
 
 .color-card button {
-    padding: 8px 12px;
 
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #111111;
+    min-width: 100px;
 
-    border: none;
-    border-radius: 6px;
+    padding: 8px 13px;
 
-    font-size: 14px;
-    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.90);
+
+    color: #151214;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
 
     text-shadow: none;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.12);
 }
+
+
+.color-card button:hover {
+
+    background-color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+.color-card button:focus-visible {
+
+    outline: 3px solid #ffffff;
+
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   MENSAJE / FEEDBACK
+======================================== */
+
 #mensaje {
-    margin-top: 20px;
-    font-weight:  bold;
+
+    min-height: 24px;
+
+    margin-top: 22px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: var(--texto-secundario);
+
+    transition: opacity 0.2s ease;
 }
 
-/*footer*/
 
-footer{
-  max-width: 1200px;
+/* ========================================
+   FOOTER
+======================================== */
 
-  margin: 40px auto 0;
-  padding: 30px  20px;
+footer {
 
-  text-align: center;
+    width: 100%;
 
-  background-color: var(--fondo-principal);
-  color:var(--texto-principal);
+    margin-top: auto;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background-color: rgba(5, 4, 5, 0.92);
+
+    border-top: 1px solid var(--borde-suave);
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
 }
 
+
+/* ========================================
+   ANIMACIÓN
+======================================== */
 
 @keyframes aparecer {
 
     from {
+
         opacity: 0;
-        transform: translateY(10px);
+
+        transform: translateY(12px);
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
     }
 }
 
+
+/* ========================================
+   REDUCIR ANIMACIONES
+======================================== */
+
 @media (prefers-reduced-motion: reduce) {
 
+    html {
+
+        scroll-behavior: auto;
+    }
+
     .color-card {
+
         animation: none;
     }
 
+    button,
+    select,
+    .color-card {
+
+        transition: none;
+    }
 }
 
-/* Tablet */
+
+/* ========================================
+   TABLET
+======================================== */
+
 @media (max-width: 800px) {
 
-    #paleta {
-        grid-template-columns: repeat(2, 1fr);
+    main {
+
+        width: min(94%, 700px);
+
+        margin-top: 30px;
     }
 
-}
-
-/* Celular */
-@media (max-width: 550px) {
-
-    #paleta {
-        grid-template-columns: 1fr;
-    }
-
-    header h1 {
-        font-size: 36px;
-    }
 
     section {
-        padding: 20px;
+
+        padding: 28px 22px;
     }
 
+
+    #paleta {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 550px) {
+
+    header {
+
+        padding: 35px 18px 28px;
+    }
+
+
+    header h1 {
+
+        font-size: 34px;
+    }
+
+
+    header p {
+
+        font-size: 16px;
+    }
+
+
+    main {
+
+        width: 94%;
+
+        margin: 22px auto;
+    }
+
+
+    section {
+
+        padding: 25px 17px;
+
+        border-radius: 16px;
+    }
+
+
+    section h2 {
+
+        font-size: 22px;
+    }
+
+
+    .acciones {
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .acciones button {
+
+        width: 100%;
+
+        max-width: 340px;
+    }
+
+
+    #paleta {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .color-card {
+
+        min-height: 180px;
+    }
 }
