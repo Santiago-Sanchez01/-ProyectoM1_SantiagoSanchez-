@@ -84,7 +84,7 @@ section{
     margin-bottom: 25px; 
     }
 
-section h2,h3 {
+section h2 {
     margin-bottom: 20px;
     font-size: 24px;
     }
@@ -114,9 +114,8 @@ button {
     padding: 14px 24px;
     
     background-color: var(--tarjeta-fondo);
-
-    Border:none;
-    border:8px;
+    color: var(--texto-principal);
+    border:none;
 
 	font-size: 16px;
     font-weight: bold;
@@ -147,17 +146,51 @@ select:focus-visible{
 }
 
 .color-card {
-    min-height: 180px;
+    min-height: 150px;
+    padding: 20px;
 
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 12px;
 
     border-radius: 12px;
 
     font-weight: bold;
+
+    text-shadow: 0 1px 3px #000000;
+
+    animation: aparecer 0.4s ease-out;
+}
+
+#generar {
+    padding: 14px 24px;
+    background-color: var(--tarjeta-fondo);
+    color: var(--texto-principal);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.color-card button {
+    padding: 8px 12px;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #111111;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    text-shadow: none;
+}
+#mensaje {
+    margin-top: 20px;
+    font-weight:  bold;
 }
 
 /*footer*/
@@ -172,4 +205,52 @@ footer{
 
   background-color: var(--fondo-principal);
   color:var(--texto-principal);
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .color-card {
+        animation: none;
+    }
+
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+
+    #paleta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Celular */
+@media (max-width: 550px) {
+
+    #paleta {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
 }
